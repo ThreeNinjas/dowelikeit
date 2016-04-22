@@ -1,0 +1,63 @@
+
+<html>
+	<head>
+	<!--<script type="text/javascript" src="preferences.js"></script>-->
+	<title>Things We Either Like Or Don't Like</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="http://www.beerheer.com/css/normalize.css">
+  	<link rel="stylesheet" href="http://www.beerheer.com/css/skeleton.css">
+  	<link rel="stylesheet" href="http://www.beerheer.com/css/style_jason.css">
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+		body {
+    		background-image: url("images-summer02.png");
+			}
+	</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="six columns" style="margin-top: 0.5%">
+					<h3>Do we like it or what?</h3>
+						<form id="form">
+							<input type="text" id="userInput" name="userInput" method="post"/>
+							<input type="submit" value="Submit"/>
+						</form>
+
+					<div id="underInput" /></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="nine columns" style="position:absolute;bottom:-400;" id="footer">
+        			<p>&copy; 2015 Jason J Brunet | <a href="mailto:jeffthefish@gmail.com">Contact</a></p>
+        		</div>
+    		</div>
+		</div>
+
+		<!-- use jquery + ajax to return html -->
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$( "#form" ).submit(function( event ) {
+				$("#underInput").load("preferences.php",
+					$("#form").serializeArray()
+				);
+  				event.preventDefault();
+		});
+
+			function preferences() {
+				$("#underInput").load("preferences.php",
+					$("#form").serializeArray()
+					);
+			}
+
+		});
+		</script>
+	</body>
+</html>
